@@ -11,12 +11,7 @@ import {
   Trash2,
   UploadCloud,
 } from 'lucide-react'
-import { PDFDocument } from 'pdf-lib'
-import { GlobalWorkerOptions, getDocument } from 'pdfjs-dist'
-import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import './App.css'
-
-GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
 const tools = [
   {
@@ -117,6 +112,15 @@ function makeSheetName(fileName, existingNames, index) {
   return name
 }
 
+async function openPdf(data) {
+  const [{ getDocument, GlobalWorkerOptions }, { default: workerUrl }] = await Promise.all([
+    import('pdfjs-dist'),
+    import('pdfjs-dist/build/pdf.worker.min.mjs?url'),
+  ])
+  GlobalWorkerOptions.workerSrc = workerUrl
+  return getDocument({ data }).promise
+}
+
 function App() {
   const [activeToolId, setActiveToolId] = useState(tools[0].id)
   const [selectedFiles, setSelectedFiles] = useState([])
@@ -181,6 +185,7 @@ function App() {
   }
 
   const createPdfFromImages = async () => {
+    const { PDFDocument } = await import('pdf-lib')
     const pdf = await PDFDocument.create()
 
     for (const file of selectedFiles) {
@@ -204,7 +209,7 @@ function App() {
     const imageOutputs = []
 
     for (const file of selectedFiles) {
-      const pdf = await getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise
+      const pdf = await openPdf(new Uint8Array(await file.arrayBuffer()))
       const baseName = file.name.replace(/\.pdf$/i, '')
 
       try {
@@ -250,7 +255,7 @@ function App() {
     let extractedRows = 0
 
     for (const [fileIndex, file] of selectedFiles.entries()) {
-      const pdf = await getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise
+      const pdf = await openPdf(new Uint8Array(await file.arrayBuffer()))
 
       try {
         const sheet = workbook.addWorksheet(makeSheetName(file.name, existingNames, fileIndex))
