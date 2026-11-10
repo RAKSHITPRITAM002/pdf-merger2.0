@@ -9,6 +9,7 @@ A small browser-based toolbox for converting common document formats:
 ## Run locally
 
 ```sh
+cd toolbox
 npm install
 npm run dev
 ```
