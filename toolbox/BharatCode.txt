@@ -1,0 +1,70 @@
+PDF-MERGER 2.0 Project Information ===================
+
+1. PROJECT OVERVIEW
+
+Project Name: PDF Merger 2.0
+
+PDF Merger 2.0 is a utility application designed to combine multiple PDF
+documents into a single PDF file. It helps users organize documents
+quickly and reduces the effort required to merge files manually.
+
+2. OBJECTIVE
+
+The objective of this project is to provide a simple, reliable, and
+user-friendly way to merge PDF files while preserving the original
+document content and page order.
+
+3. KEY FEATURES
+
+-   Select or upload multiple PDF files.
+-   Merge selected PDF files into one document.
+-   Arrange files in the required merging order (if supported by the
+    UI).
+-   Generate and save the merged PDF.
+-   Provide clear validation and error messages for unsupported or
+    invalid files.
+-   Offer a straightforward interface for an easy user experience.
+
+4. HOW TO USE
+
+1.  Start the application using the setup instructions for this project.
+
+2.  Select the PDF files you want to merge.
+
+3.  Arrange the files in the desired order, if the application provides
+    this option.
+
+4.  Choose the Merge option.
+
+5.  Save or download the generated PDF file.
+
+6.  REQUIREMENTS
+
+-   A device capable of running the project.
+-   The runtime and dependencies required by the implementation.
+-   PDF files that are readable and not password-protected, unless the
+    application explicitly supports protected PDFs.
+
+6. TECHNOLOGY STACK
+
+The exact programming language, framework, libraries, and tools depend
+on the implementation of this project.
+
+Programming Language: Javascript,Html,css Framework / UI: [Add framework, if
+applicable] PDF Processing Library: React Development Tools:
+BharatCode Ai
+
+7. INSTALLATION AND EXECUTION
+
+Follow the commands and setup steps provided in the project’s README or
+documentation.
+
+Repository / Project Location: [Add repository path or URL] Installation
+Command: [Add installation command] Run Command: [Add start command]
+
+8. PROJECT HIGHLIGHTS
+
+PDF Merger 2.0 focuses on convenience, document organization, and a
+simple workflow. The application is intended to make combining PDF
+documents faster and more accessible.
+
