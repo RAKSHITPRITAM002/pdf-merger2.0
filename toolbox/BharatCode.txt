@@ -59,8 +59,9 @@ BharatCode Ai
 Follow the commands and setup steps provided in the project’s README or
 documentation.
 
-Repository / Project Location: [Add repository path or URL] Installation
-Command: [Add installation command] Run Command: [Add start command]
+Repository / Project Location: https://github.com/RAKSHITPRITAM002/pdf-merger2.0 
+Installation
+Command: git clone git@github.com:RAKSHITPRITAM002/pdf-merger2.0.git  Run Command:npm run dev
 
 8. PROJECT HIGHLIGHTS
 
